@@ -1,0 +1,73 @@
+.filter-link {
+    color: #aaa;
+    border-bottom: 1px solid transparent;
+    text-decoration: none;
+    transition: all 0.4s;
+}
+
+.filter-link:hover {
+    color: #6c7ae0;
+    border-bottom: 1px solid #6c7ae0;
+}
+
+.filter-link-active {
+    color: #6c7ae0;
+    border-bottom: 1px solid #6c7ae0;
+}
+
+.tag-filter-link {
+    color: #aaa;
+    height: 30px;
+    line-height: 25px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0.25rem;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    text-decoration: none;
+    transition: all 0.4s;
+}
+
+.tag-filter-link:hover {
+    color: #6c7ae0;
+    border: 1px solid #6c7ae0;
+}
+
+.tag-filter-link-active {
+    color: #6c7ae0;
+    border: 1px solid #6c7ae0;
+}
+
+.color-filter-checkbox {
+    margin: 0.4em;
+    width: 30px;
+    height: 30px;
+    border-radius: 100% !important;
+    outline-offset: 2px;
+}
+
+.color-filter-checkbox:first-child {
+    margin-left: 0 !important;
+}
+
+.btn-check:checked+.color-filter-checkbox {
+    outline: 2px solid #0d6efd;
+    border-color: transparent !important;
+}
+
+.multi-range-slider {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.multi-range-slider .bar-inner {
+  background-color: #0d6efd !important;
+}
+
+#minPrice {
+  width: 5em !important;
+}
+
+#maxPrice {
+  width: 5em !important;
+}

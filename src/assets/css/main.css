@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import "vue-select/dist/vue-select.css";
+@import "pagination.css";
+@import "filter.css";
+
+.vh-50 {
+    height: 50vh!important;
+}
+
+.w-11em {
+    width: 11em;
+}
+
+.brand-logo {
+    font-family: 'Satisfy', cursive;
+    font-size: 1.5em;
+}
+
+.color {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+    margin-right: 6px;
+}
+
+.product-page-color {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    margin-right: 6px;
+}
+
+.no-after-content::after {
+    content: none !important;
+}
+
+.quantity-in-cart::-webkit-outer-spin-button,
+.quantity-in-cart::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.quantity-in-cart {
+    -moz-appearance: textfield;
+    width: 3rem;
+    border: 1px solid #212529;
+    outline: none;
+}
+
+.card-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

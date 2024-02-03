@@ -1,0 +1,51 @@
+.products-pagination .pagination-container {
+  column-gap: 10px;
+}
+
+.products-pagination .paginate-buttons {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: rgb(242, 242, 242);
+  border: 1px solid rgb(217, 217, 217);
+  color: black;
+  font-size: 1em;
+}
+
+.products-pagination .paginate-buttons:hover {
+  background-color: #d8d8d8;
+}
+
+.products-pagination .active-page {
+  background-color: #3498db;
+  border: 1px solid #3498db;
+  color: white;
+}
+
+.products-pagination .active-page:hover {
+  background-color: #2988c8;
+}
+
+.products-pagination .back-button:active,
+.products-pagination .next-button:active {
+  background-color: #c4c4c4;
+}
+
+@media screen and (max-width: 500px) {
+  .products-pagination .paginate-buttons {
+    height: 35px;
+    width: 35px;
+    font-size: .8em;
+    font-weight: bolder;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .products-pagination .paginate-buttons {
+    height: 30px;
+    width: 30px;
+    font-size: .8em;
+    font-weight: bolder;
+  }
+}
