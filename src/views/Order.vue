@@ -1,25 +1,17 @@
 <template>
-  <section class="container my-4 my-lg-5">
-    <h1 class="mb-3 mb-lg-4">Оформити замовлення</h1>
+  <section class="container my-4 my-lg-5" v-if="cart.length">
+    <h1 class="mb-3 mb-lg-4">Make an order</h1>
     <div class="row gx-5 bg-primary-subtle">
       <div class="col-6">
         <form>
           <div class="mb-3">
-            <label for="tel" class="form-label">Телефон</label>
+            <label for="tel" class="form-label">Tel.:</label>
             <input type="tel" class="form-control" id="tel"
                    placeholder="+38 (096) 123 4567" pattern="^\+38\s\(0\d{2}\)\sd{3}\sd{4}$">
           </div>
           <div class="mb-3">
-            <label for="surname" class="form-label">Прізвище</label>
+            <label for="surname" class="form-label">Full Name</label>
             <input type="text" class="form-control" id="surname" placeholder="Архипова">
-          </div>
-          <div class="mb-3">
-            <label for="name" class="form-label">Ім'я</label>
-            <input type="text" class="form-control" id="name" placeholder="Дарія">
-          </div>
-          <div class="mb-3">
-            <label for="patronymic" class="form-label">По батькові</label>
-            <input type="text" class="form-control" id="patronymic" placeholder="Михайлівна">
           </div>
           <div class="mb-3">
             <label for="email" class="form-label">E-mail</label>
@@ -28,8 +20,8 @@
         </form>
       </div>
       <div class="col-6">
-        <h6 class="mb-3">Якщо ви постійний клієнт, авторизуйтесь за допомогою кнопки і ми автоматично заповнимо ваші дані і збережемо всю інформацію по замовленню і контактні дані.</h6>
-        <a href="#!" class="btn btn-primary btn-lg">Зареєструватися</a>
+        <h6 class="mb-3">If you're a loyal customer, please authorize with a button and we will automatically populate your data and save all the order info.</h6>
+        <a href="#!" class="btn btn-primary btn-lg">Register</a>
       </div>
     </div>
     <div class="row gx-5 mt-4 mt-lg-5">
@@ -78,7 +70,7 @@
           </li>
         </ul>
         <div class="d-flex align-items-center w-100 my-3">
-          <h5 class="m-0">Виберіть місто доставки:&nbsp;</h5>
+          <h5 class="m-0">Choose delivery settlement:&nbsp;</h5>
           <div class="w-11em">
             <v-select :options="deliveryCities"
                       v-model="orderData.deliveryCity"
@@ -89,10 +81,12 @@
       </div>
     </div>
   </section>
+  <div class="container py-4 py-lg-5 vh-50" v-else>
+    <h4>Your cart is empty.</h4>
+  </div>
 </template>
 
 <script>
-import Inputmask from "inputmask";
 import { mapState, mapActions } from "pinia";
 import { useCartStore } from "../store/cart.js";
 
@@ -109,10 +103,6 @@ export default {
     };
   },
   methods: {
-    maskTel() {
-      var selector = document.getElementById("tel");
-      Inputmask("+38 (099) 999 9999").mask(selector);
-    },
     setDeliveryCity(value) {
       this.orderData.deliveryCity = value;
     },
@@ -120,9 +110,6 @@ export default {
   },
   computed: {
     ...mapState(useCartStore, ["cart", "total"])
-  },
-  mounted() {
-    this.maskTel();
   }
 }
 </script>

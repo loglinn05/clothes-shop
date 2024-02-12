@@ -11,7 +11,7 @@
             <div class="col-lg-5 col-md-7 col-12 mb-2 mb-md-0">
               <form action="#" class="search mb-md-0">
                 <div class="input-group w-100">
-                  <input type="text" class="form-control" placeholder="Пошук">
+                  <input type="text" class="form-control" placeholder="Search">
                   <div class="input-group-append">
                     <button class="btn btn-primary" type="submit">
                       <i class="fa fa-search"></i>
@@ -32,14 +32,14 @@
                   </span>
                 </a>
                 <div class="icontext">
-                  <a href="#" class="btn btn-outline-primary me-3">
+                  <router-link class="btn btn-outline-primary me-3" to="/profile">
                     <i class="fa-solid fa-user"></i>
-                  </a>
+                  </router-link>
                   <div class="text">
-                    <span class="text-muted">Ласкаво просимо!</span>
+                    <span class="text-muted">Welcome!</span>
                     <div>
-                      <a href="#">Увійти</a> |
-                      <a href="#"> Зареєструватися</a>
+                      <router-link to="/login">Login</router-link> |
+                      <router-link to="/register">Register</router-link>
                     </div>
                   </div>
                 </div>
@@ -57,10 +57,10 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item dropdown">
-                <router-link class="nav-link py-lg-0" :to="'/'">Головна</router-link>
+                <router-link class="nav-link py-lg-0" :to="'/'">Home</router-link>
               </li>
               <li class="nav-item dropdown">
-                <router-link class="nav-link py-lg-0" :to="'/products'">Каталог</router-link>
+                <router-link class="nav-link py-lg-0" :to="'/products'">Products</router-link>
               </li>
             </ul>
           </div>
@@ -149,7 +149,7 @@
   <div class="offcanvas offcanvas-end" tabindex="-1"
        id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
     <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="cartOffcanvasLabel">Кошик</h5>
+      <h5 class="offcanvas-title" id="cartOffcanvasLabel">Cart</h5>
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
@@ -167,21 +167,21 @@
             <h6>${{ item.product.price }}</h6>
             <button type="button"
                     class="btn btn-sm btn-danger mt-1"
-                    @click="deleteFromCart(item.product.id)">Видалити</button>
+                    @click="deleteFromCart(item.product.id)">Delete</button>
           </li>
         </ul>
       </div>
-      <p v-else>Ваш кошик порожній.</p>
+      <p v-else>Your cart is empty.</p>
     </div>
     <div id="cartOffcanvasBottom"
          class="position-absolute bottom-0 d-flex justify-content-center w-100 bg-light p-2 d-flex flex-column align-items-center"
          style="z-index: 5555;"
          v-if="cart.length">      
         <span class="d-inline-flex mb-1" data-bs-dismiss="offcanvas">
-          <router-link class="btn btn-primary w-100 m-0" :to="'/order'">Оформити замовлення</router-link>
+          <router-link class="btn btn-primary w-100 m-0" :to="'/order'">Make an order</router-link>
         </span>
       <router-link :to="'/cart'">
-        <span data-bs-dismiss="offcanvas">Перейти до кошика</span>
+        <span data-bs-dismiss="offcanvas">Go to cart</span>
       </router-link>
     </div>
   </div>

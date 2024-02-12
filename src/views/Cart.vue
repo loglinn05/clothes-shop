@@ -59,7 +59,7 @@
     </div>
   </section>
   <div class="container py-4 py-lg-5 vh-50" v-else>
-    <h4>Your cart is empty.</h4>
+    <h4>Ваш кошик порожній.</h4>
   </div>
 </template>
 

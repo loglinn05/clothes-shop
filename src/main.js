@@ -19,9 +19,9 @@ components.forEach(component => {
 });
 app.component("v-select", VueSelect);
 
-app.use(router);
 pinia.use(piniaPluginPersistedState);
 app.use(pinia);
+app.use(router);
 app.use(VueAwesomePaginate);
 app.config.globalProperties.axios = axios;
 app.mount('#app');
